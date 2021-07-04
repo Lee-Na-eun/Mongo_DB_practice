@@ -19,16 +19,12 @@ app.use(express.json());
 // app.use(bodyParser.json());
 
 mongoose
-  .connect(
-    config.mongoURI,
-    "mongodb+srv://Naeun:peVSS4c@hnwJ86x@youtube-clone.gtu2h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-    }
-  )
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
   .then(() => {
     console.log("Mongo DB connected...");
   })
